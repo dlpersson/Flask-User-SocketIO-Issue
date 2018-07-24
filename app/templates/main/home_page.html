@@ -2,6 +2,7 @@
 
 {% block content %}
     <h2>{%trans%}Home page{%endtrans%}</h2>
+    <p><a href="/socketio">{%trans%}SOCKET IO PAGE{%endtrans%}</a></p>
     <p><a href={{ url_for('user.register') }}>{%trans%}Register{%endtrans%}</a></p>
     <p><a href={{ url_for('user.login') }}>{%trans%}Sign in{%endtrans%}</a></p>
     <p><a href={{ url_for('main.home_page') }}>{%trans%}Home Page{%endtrans%}</a> (accessible to anyone)</p>

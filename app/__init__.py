@@ -11,13 +11,14 @@ from flask_mail import Mail
 from flask_migrate import Migrate, MigrateCommand
 from flask_user import UserManager
 from flask_wtf.csrf import CSRFProtect
-
+from flask_socketio import SocketIO
 
 # Instantiate Flask extensions
 csrf_protect = CSRFProtect()
 db = SQLAlchemy()
 mail = Mail()
 migrate = Migrate()
+socketio = SocketIO()
 
 # Initialize Flask Application
 def create_app(extra_config_settings={}):
@@ -44,6 +45,9 @@ def create_app(extra_config_settings={}):
 
     # Setup WTForms CSRFProtect
     csrf_protect.init_app(app)
+
+    # Setup SocketIO
+    socketio.init_app(app)
 
     # Register blueprints
     from .views import register_blueprints
